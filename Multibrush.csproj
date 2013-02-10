@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8037E9BF-0E5C-4B90-9968-6E749658C768}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Multibrush</RootNamespace>
+    <AssemblyName>Multibrush</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Administrator\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <PostBuildEvent>"C:\Documents and Settings\Administrator\My Documents\copyMulti.bat"</PostBuildEvent>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunSourceAnalysis>False</RunSourceAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Plug-ins\Compiled\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GlacialTreeList">
+      <HintPath>..\..\..\..\..\Program Files %28x86%29\Atari\Neverwinter Nights 2\GlacialTreeList.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX" />
+    <Reference Include="NWN2Toolset">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files %28x86%29\Atari\Neverwinter Nights 2\NWN2Toolset.dll</HintPath>
+    </Reference>
+    <Reference Include="OEIShared">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files %28x86%29\Atari\Neverwinter Nights 2\OEIShared.dll</HintPath>
+    </Reference>
+    <Reference Include="SandBar">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files %28x86%29\Atari\Neverwinter Nights 2\SandBar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XPExplorerBar">
+      <HintPath>..\..\..\..\..\Program Files %28x86%29\Atari\Neverwinter Nights 2\XPExplorerBar.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="brushData.cs" />
+    <Compile Include="LineSegment.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="Geom\GeometryUtility\AnalyticGeometryException.cs" />
+    <Compile Include="Geom\GeometryUtility\CLine.cs" />
+    <Compile Include="Geom\GeometryUtility\CPoint2D.cs" />
+    <Compile Include="Geom\GeometryUtility\CPolygon.cs" />
+    <Compile Include="Geom\GeometryUtility\Definition.cs" />
+    <Compile Include="Geom\PolygonCuttingEar\CPolygonShape.cs" />
+    <Compile Include="Triangle.cs" />
+    <Compile Include="Painter.cs" />
+    <Compile Include="StopMulti.cs" />
+    <Compile Include="StopMulti.Designer.cs">
+      <DependentUpon>StopMulti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputReceiver.cs" />
+    <Compile Include="IntervalTimer.cs" />
+    <Compile Include="Multibrush.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Texturebrowser.cs" />
+    <Compile Include="UI\MultiForm.cs" />
+    <Compile Include="UI\MultiForm.Designer.cs">
+      <DependentUpon>MultiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YATT.DAL\ASWM.cs" />
+    <Compile Include="YATT.DAL\Constants.cs" />
+    <Compile Include="YATT.DAL\DDS.cs" />
+    <Compile Include="YATT.DAL\DDSGroup.cs" />
+    <Compile Include="YATT.DAL\Packet.cs" />
+    <Compile Include="YATT.DAL\Structs.cs" />
+    <Compile Include="YATT.DAL\Triangle.cs" />
+    <Compile Include="YATT.DAL\TRN.cs" />
+    <Compile Include="YATT.DAL\TRRN.cs" />
+    <Compile Include="YATT.DAL\TRWH.cs" />
+    <Compile Include="YATT.DAL\Vertex.cs" />
+    <Compile Include="YATT.Tools\Vector.cs" />
+    <EmbeddedResource Include="StopMulti.resx">
+      <DependentUpon>StopMulti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Texturebrowser.resx">
+      <DependentUpon>Texturebrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MultiForm.resx">
+      <DependentUpon>MultiForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Geom" />
+    <Folder Include="Geom\GeometryUtility" />
+    <Folder Include="Geom\PolygonCuttingEar" />
+    <Folder Include="UI" />
+    <Folder Include="YATT.DAL" />
+    <Folder Include="YATT.Tools" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
